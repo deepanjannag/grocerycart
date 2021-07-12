@@ -33,14 +33,12 @@
                 cart.insertBefore(cartItem, total);
                 alert('item added to the cart');
 
-                alert('calling total');
                 showTotals();
             }
         });
     });
 
     function showTotals() {
-        alert('total called');
         const total = [];
         const items = document.querySelectorAll('.cart-item-price');
         items.forEach(function (item) {
