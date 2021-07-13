@@ -13,13 +13,13 @@
                 let fullPath = e.target.parentElement.previousElementSibling.src;
                 let pos = fullPath.indexOf('img') + 3;    //use the 3 to get rid of the 'img' string
                 let partPath = fullPath.slice(pos);
-                const item = {};
-                item.img = `img-cart${ partPath }`;
-                let name = e.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent;
-                item.name = name;
                 let price = e.target.parentElement.parentElement.nextElementSibling.children[0].children[1].textContent;
-                let finalPrice = price.slice(1).trim();
-                item.price = finalPrice;
+
+                const item = {
+                    img: `img-cart${ partPath }`,
+                    name: e.target.parentElement.parentElement.nextElementSibling.children[0].children[0].textContent,
+                    price: price.slice(1).trim()
+                };
 
                 const cartItem = document.createElement('div');
                 cartItem.classList.add('cart-item', 'd-flix', 'justify-content-between', 'text-capitalize', 'my-3');
